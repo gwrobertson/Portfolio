@@ -1,0 +1,174 @@
+#projects{
+    
+    .content{
+        padding: 0;
+        margin: 0;
+    }
+
+    .container{
+        opacity: 0;
+        h2{
+            font-size: 3em;
+            text-align: center;
+            padding: 1em;
+        }
+
+    }
+    .fade-in{
+        animation-name: fade;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-delay: .2s;
+    }
+
+    .grid{
+        display: grid;
+        margin-left: 4em;
+        margin-right: 4em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 6em;
+        
+        
+        .project{
+            position: relative;
+            opacity: 0;
+
+            img{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                border-radius: 15px;
+            }
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $clr-blue;
+                overflow: hidden;
+                width: 100%;
+                height: 0;
+                transition: .4s ease;
+                transition-delay: .1s;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                opacity: 0;
+
+                .text {
+                    color: $clr-blue-light;
+                    font-size: 1.2em;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                }
+            }
+
+            &:hover .overlay {
+                height: 22%;
+                opacity: 1;
+            }
+        }
+        
+
+    }
+    
+}
+
+.animate-left{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation-name: left;
+        animation-fill-mode: forwards;
+        animation-delay: .2s;
+        animation-duration: .8s;
+        opacity: 0;
+}
+
+
+
+.animate-right{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation-name: right;
+        animation-fill-mode: forwards;
+        animation-delay: .2s;
+        animation-duration: .8s;
+        opacity: 0;
+}
+
+@keyframes fade {
+    0% {opacity: 0;};
+
+    100% {opacity: 1;};
+}
+
+
+@keyframes left{
+    0% {left: -10em; opacity: 0;}
+    100% {left: 0; opacity: 1;}
+}
+
+@keyframes right{
+    0% {right: -10em; opacity: 0;}
+    100% {right: 0; opacity: 1;}
+}
+
+
+@media(max-width: 1100px){
+    #projects{
+
+        .grid{
+            margin-left: 2em;
+            margin-right: 2em;
+            grid-gap: 6em;
+        }
+    }
+}
+
+@media(max-width: 800px){
+    #projects{
+
+        .grid{
+            margin-left: 2em;
+            margin-right: 2em;
+            grid-gap: 2em;
+        }
+    }
+}
+
+@media (max-width: 760px){
+    #projects{
+        .project{
+            grid-column: 1/4;
+
+            .overlay{
+                display: none;
+            }
+        }
+    
+        .container{
+           
+            h2{
+                font-size: 2.4em;
+                padding: .5em;
+            }
+        }
+    }
+
+    @keyframes left{
+        
+        100% {left: 0; opacity: 1;}
+    }
+    
+    @keyframes right{
+       
+        100% {right: 0; opacity: 1;}
+    }
+}

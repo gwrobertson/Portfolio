@@ -1,0 +1,138 @@
+#skills{
+    position: relative;
+    display: grid;
+    grid-template-columns: 10em 1fr 10em;
+    margin-top: 6em;
+
+    .scroll-animations{
+        position: relative;
+    }
+    
+    .content{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+    
+        h2{
+            font-size: 3em;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 5em 1fr 1fr 5em;
+            text-align: left;
+
+            p{
+                font-size: 1.2em;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+            }
+
+            ul{
+                padding: 0;
+                margin: 0;
+                margin-top: .6em;
+                padding-left: 2em;
+            }
+
+            .skills{
+                grid-column: 2/3;
+                font-size: 1.6em;
+            }
+            .tools{
+                grid-column: 3/4;
+                font-size: 1.6em;
+            }
+        }
+
+    }
+    
+    .fade-in{
+        animation-name: fade;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-delay: .2s;
+    }
+    
+    @keyframes fade {
+        0% {opacity: 0; top: 4em;};
+    
+        100% {opacity: 1; top: 0;};
+    }
+}
+
+@media(max-width: 1000px){
+    #skills{
+        .content{
+            .container{
+                grid-template-columns: 2em 1fr 1fr 2em;
+            }
+        }
+    }
+}
+
+@media(max-width: 920px){
+    #skills{
+        .content{
+            .container{
+                grid-template-columns: 1.5em 1fr 1fr 1.5em;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 760px){
+    #skills{
+        grid-template-columns: .8em 1fr .8em;
+
+        .content{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            text-align: center;
+            position: relative;
+            opacity: 0;
+        
+            h2{
+                font-size: 2.4em;
+            }
+            p{
+                font-size: 1.2em;
+            }
+
+            .container{
+                display: grid;
+                grid-template-columns: 2em 1fr 1fr 2em;
+                text-align: left;
+    
+                p{
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    padding: 0;
+                    margin: 0;
+                    text-align: left;
+                }
+    
+                ul{
+                    padding: 0;
+                    margin: 0;
+                    margin-top: .6em;
+                    padding-left: 2em;
+                }
+    
+                .skills{
+                    grid-column: 2/3;
+                    font-size: 1.2em;
+                }
+                .tools{
+                    grid-column: 3/4;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}

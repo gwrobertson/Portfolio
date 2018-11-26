@@ -1,0 +1,48 @@
+#intro{
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-rows: 180px 2fr 180px;
+
+    .content{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        animation-name: intro;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-delay: .5s;
+
+        h2{
+            font-size: 3.2em;
+        }
+        p{
+            font-size: 1.6em;
+        }
+    }
+}
+
+@keyframes intro {
+    0% {opacity: 0; top: 4em;};
+
+    100% {opacity: 1; top: 0;};
+}
+
+@media (max-width: 760px){
+    #intro{
+        display: grid;
+        grid-template-columns: 2em 1fr 2em;
+        grid-template-rows: 10px 2fr 100px;
+
+        .content{
+            h2{
+                font-size: 2.6em;
+            }
+            p{
+                font-size: 1.2em;
+            }
+        }
+    }
+
+}
